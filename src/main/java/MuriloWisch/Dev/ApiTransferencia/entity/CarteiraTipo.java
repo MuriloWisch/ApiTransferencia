@@ -15,6 +15,11 @@ public class CarteiraTipo {
     public CarteiraTipo() {
     }
 
+    public CarteiraTipo(Long id, String descricao) {
+        this.id = id;
+        this.descricao = descricao;
+    }
+
     public Long getId() {
         return id;
     }
@@ -44,5 +49,9 @@ public class CarteiraTipo {
         private Long id;
         private String descricao;
 
+        public CarteiraTipo get(){
+            return new CarteiraTipo(id, descricao);
+
+        }
     }
 }
