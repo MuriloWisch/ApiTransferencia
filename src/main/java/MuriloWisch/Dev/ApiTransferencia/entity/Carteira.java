@@ -12,14 +12,81 @@ public class Carteira {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "nome_completo")
     private String nomeCompleto;
 
+    @Column(name = "cpf_cnpj",unique = true)
     private String cpfCnpj;
 
+    @Column(name = "email",unique = true)
     private String email;
 
+    @Column(name = "senha")
     private String senha;
 
-    private BigDecimal saldo;
+    @Column(name = "saldo")
+    private BigDecimal saldo = BigDecimal.ZERO;
 
+    @JoinColumn(name = "wallet_type_id")
+    @ManyToOne
+    private CarteiraTipo carteiraTipo;
+
+    public Carteira() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNomeCompleto() {
+        return nomeCompleto;
+    }
+
+    public void setNomeCompleto(String nomeCompleto) {
+        this.nomeCompleto = nomeCompleto;
+    }
+
+    public String getCpfCnpj() {
+        return cpfCnpj;
+    }
+
+    public void setCpfCnpj(String cpfCnpj) {
+        this.cpfCnpj = cpfCnpj;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public BigDecimal getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(BigDecimal saldo) {
+        this.saldo = saldo;
+    }
+
+    public CarteiraTipo getCarteiraTipo() {
+        return carteiraTipo;
+    }
+
+    public void setCarteiraTipo(CarteiraTipo carteiraTipo) {
+        this.carteiraTipo = carteiraTipo;
+    }
 }
