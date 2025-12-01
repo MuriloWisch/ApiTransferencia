@@ -30,4 +30,19 @@ public class CarteiraTipo {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
+    public enum Enum {
+
+        USUARIO(1L, "usuario"),
+        LOJISTA(2L, "lojista");
+
+        Enum(Long id, String descricao) {
+            this.id = id;
+            this.descricao = descricao;
+        }
+
+        private Long id;
+        private String descricao;
+
+    }
 }
