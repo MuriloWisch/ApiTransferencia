@@ -18,7 +18,10 @@ public class CarteiraController {
 
     @PostMapping("/carteira")
     public ResponseEntity<Carteira> criarCarteira(@RequestBody CriarCarteiraDto dto){
-        carteiraService.criarCarteira(dto)
+
+       var carteira = carteiraService.criarCarteira(dto);
+
+       return ResponseEntity.ok(carteira);
 
     }
 }
