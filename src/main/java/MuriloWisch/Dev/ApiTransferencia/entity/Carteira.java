@@ -34,6 +34,14 @@ public class Carteira {
     public Carteira() {
     }
 
+    public Carteira(String nomeCompleto, String cpfCnpj, String email, String senha, CarteiraTipo carteiraTipo) {
+        this.nomeCompleto = nomeCompleto;
+        this.cpfCnpj = cpfCnpj;
+        this.email = email;
+        this.senha = senha;
+        this.carteiraTipo = carteiraTipo;
+    }
+
     public Long getId() {
         return id;
     }
