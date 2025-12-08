@@ -3,7 +3,7 @@ package MuriloWisch.Dev.ApiTransferencia.exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
 
-public class CarteiraDataAlreadyExistsException extends TrasnsferenciaException {
+public class CarteiraDataAlreadyExistsException extends TransferenciaException {
 
     private String detail;
 
