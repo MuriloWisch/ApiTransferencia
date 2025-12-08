@@ -17,6 +17,9 @@ public class CarteiraService {
     public Carteira criarCarteira(CriarCarteiraDto dto) {
 
         var carteiraDb = carteiraRepository.findByCpfCnpjOrEmail(dto.cpfCnpj(),dto.email());
+        if (carteiraDb.isPresent()){
+
+        }
 
         return carteiraRepository.save(dto.toCarteira());
     }
