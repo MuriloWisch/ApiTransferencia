@@ -27,7 +27,7 @@ public class Carteira {
     @Column(name = "saldo")
     private BigDecimal saldo = BigDecimal.ZERO;
 
-    @JoinColumn(name = "wallet_type_id")
+    @JoinColumn(name = "carteira_tipo_id")
     @ManyToOne
     private CarteiraTipo carteiraTipo;
 

@@ -3,6 +3,7 @@ package MuriloWisch.Dev.ApiTransferencia.controller;
 import MuriloWisch.Dev.ApiTransferencia.controller.dto.CriarCarteiraDto;
 import MuriloWisch.Dev.ApiTransferencia.entity.Carteira;
 import MuriloWisch.Dev.ApiTransferencia.service.CarteiraService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,7 +18,7 @@ public class CarteiraController {
     }
 
     @PostMapping("/carteira")
-    public ResponseEntity<Carteira> criarCarteira(@RequestBody CriarCarteiraDto dto){
+    public ResponseEntity<Carteira> criarCarteira(@RequestBody @Valid CriarCarteiraDto dto){
 
        var carteira = carteiraService.criarCarteira(dto);
 
