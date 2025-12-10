@@ -28,4 +28,35 @@ public class Transferencia {
     public Transferencia() {
     }
 
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public Carteira getRemetente() {
+        return remetente;
+    }
+
+    public void setRemetente(Carteira remetente) {
+        this.remetente = remetente;
+    }
+
+    public Carteira getRecebedor() {
+        return recebedor;
+    }
+
+    public void setRecebedor(Carteira recebedor) {
+        this.recebedor = recebedor;
+    }
+
+    public BigDecimal getValor() {
+        return valor;
+    }
+
+    public void setValor(BigDecimal valor) {
+        this.valor = valor;
+    }
 }
