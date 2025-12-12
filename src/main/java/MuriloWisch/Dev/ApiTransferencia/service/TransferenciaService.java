@@ -29,6 +29,9 @@ public class TransferenciaService {
 
         validarTransferencia(transferenciaDto, pagador);
 
+        pagador.debitar(transferenciaDto.valor());
+        recebedor.creditar(transferenciaDto.valor());
+
 
         return null;
     }

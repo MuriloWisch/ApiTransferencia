@@ -107,4 +107,8 @@ public class Carteira {
     public boolean isBalanceBiggerThan(BigDecimal valor) {
         return this.saldo.doubleValue() > valor.doubleValue();
     }
+
+    public void debitar(BigDecimal valor) {
+        this.saldo.min(valor);
+    }
 }
