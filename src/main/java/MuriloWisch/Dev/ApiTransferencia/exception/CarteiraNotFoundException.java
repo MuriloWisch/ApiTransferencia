@@ -19,5 +19,6 @@ public class CarteiraNotFoundException extends TransferenciaException {
         var pb = ProblemDetail.forStatus(HttpStatus.NOT_FOUND);
         pb.setTitle("Carteira não encontrada");
         pb.setDetail("Não existe carteira com o id" + carteiraId + ".");
+        return pb;
     }
 }
