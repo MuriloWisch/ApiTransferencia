@@ -5,11 +5,10 @@ import MuriloWisch.Dev.ApiTransferencia.entity.Carteira;
 import MuriloWisch.Dev.ApiTransferencia.entity.Transferencia;
 import MuriloWisch.Dev.ApiTransferencia.exception.CarteiraNotFoundException;
 import MuriloWisch.Dev.ApiTransferencia.exception.SaldoInsuficienteException;
-import MuriloWisch.Dev.ApiTransferencia.exception.TransferenciaException;
 import MuriloWisch.Dev.ApiTransferencia.exception.TransferenciaNotAllowedForCarteiraTipoException;
 import MuriloWisch.Dev.ApiTransferencia.repository.CarteiraRepository;
 import MuriloWisch.Dev.ApiTransferencia.repository.TransferenciaRepository;
-import jakarta.validation.Valid;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -23,6 +22,7 @@ public class TransferenciaService {
         this.carteiraRepository = carteiraRepository;
     }
 
+    @Transactional
     public Transferencia transferencia(TransferenciaDto transferenciaDto) {
         var pagador = carteiraRepository.findById(transferenciaDto.remetente()).orElseThrow(() -> new CarteiraNotFoundException(transferenciaDto.remetente()));
         var recebedor = carteiraRepository.findById(transferenciaDto.recebedor()).orElseThrow(() -> new CarteiraNotFoundException(transferenciaDto.recebedor()));
@@ -32,8 +32,12 @@ public class TransferenciaService {
         pagador.debitar(transferenciaDto.valor());
         recebedor.creditar(transferenciaDto.valor());
 
+        var transferencia = new Transferencia(pagador,recebedor, transferenciaDto.valor());
+        carteiraRepository.save(pagador);
+        carteiraRepository.save(recebedor);
+        var transferenciaResultado = transferenciaRepository.save(transferencia);
 
-        return null;
+        return transferenciaResultado;
     }
 
     private void validarTransferencia(TransferenciaDto transferenciaDto, Carteira pagador) {

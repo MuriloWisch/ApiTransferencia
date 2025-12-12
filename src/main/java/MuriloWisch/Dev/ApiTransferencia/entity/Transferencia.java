@@ -25,6 +25,12 @@ public class Transferencia {
     @Column(name = "valor")
     private BigDecimal valor;
 
+    public Transferencia(Carteira recebedor, Carteira remetente, BigDecimal valor) {
+        this.recebedor = recebedor;
+        this.remetente = remetente;
+        this.valor = valor;
+    }
+
     public Transferencia() {
     }
 
