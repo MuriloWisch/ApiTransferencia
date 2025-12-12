@@ -4,6 +4,7 @@ import MuriloWisch.Dev.ApiTransferencia.controller.dto.TransferenciaDto;
 import MuriloWisch.Dev.ApiTransferencia.entity.Carteira;
 import MuriloWisch.Dev.ApiTransferencia.entity.Transferencia;
 import MuriloWisch.Dev.ApiTransferencia.exception.CarteiraNotFoundException;
+import MuriloWisch.Dev.ApiTransferencia.exception.SaldoInsuficienteException;
 import MuriloWisch.Dev.ApiTransferencia.exception.TransferenciaException;
 import MuriloWisch.Dev.ApiTransferencia.exception.TransferenciaNotAllowedForCarteiraTipoException;
 import MuriloWisch.Dev.ApiTransferencia.repository.CarteiraRepository;
@@ -38,7 +39,7 @@ public class TransferenciaService {
         }
 
         if (!pagador.isBalanceBiggerThan(transferenciaDto.valor())){
-
+            throw new SaldoInsuficienteException();
         }
     }
 }
