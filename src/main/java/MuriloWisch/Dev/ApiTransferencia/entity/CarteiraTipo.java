@@ -2,6 +2,8 @@ package MuriloWisch.Dev.ApiTransferencia.entity;
 
 import jakarta.persistence.*;
 
+import java.util.Objects;
+
 @Entity
 @Table(name = "tb_carteira_tipo")
 public class CarteiraTipo {
@@ -53,5 +55,17 @@ public class CarteiraTipo {
             return new CarteiraTipo(id, descricao);
 
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        CarteiraTipo that = (CarteiraTipo) o;
+        return Objects.equals(id, that.id) && Objects.equals(descricao, that.descricao);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, descricao);
     }
 }
