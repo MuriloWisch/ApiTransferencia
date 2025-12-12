@@ -99,6 +99,6 @@ public class Carteira {
     }
 
     public boolean isTransferenciaAllowedForCarteiraTipo() {
-        return this.carteiraTipo.equals(CarteiraTipo.Enum.get())
+        return this.carteiraTipo.equals(CarteiraTipo.Enum.USUARIO.get());
     }
 }
