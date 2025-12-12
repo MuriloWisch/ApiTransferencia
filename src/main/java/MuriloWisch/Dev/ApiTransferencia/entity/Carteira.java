@@ -109,7 +109,7 @@ public class Carteira {
     }
 
     public void debitar(BigDecimal valor) {
-       this.saldo = this.saldo.min(valor);
+       this.saldo = this.saldo.subtract(valor);
     }
 
     public void creditar(BigDecimal valor) {
