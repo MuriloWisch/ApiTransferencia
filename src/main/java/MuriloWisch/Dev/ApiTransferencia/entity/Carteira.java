@@ -1,6 +1,8 @@
 package MuriloWisch.Dev.ApiTransferencia.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.NotNull;
 
 import java.math.BigDecimal;
 
@@ -100,5 +102,9 @@ public class Carteira {
 
     public boolean isTransferenciaAllowedForCarteiraTipo() {
         return this.carteiraTipo.equals(CarteiraTipo.Enum.USUARIO.get());
+    }
+
+    public boolean isBalanceBiggerThan(BigDecimal valor) {
+        return this.saldo.doubleValue() > valor.doubleValue();
     }
 }

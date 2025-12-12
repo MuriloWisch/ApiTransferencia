@@ -36,5 +36,9 @@ public class TransferenciaService {
         if (!pagador.isTransferenciaAllowedForCarteiraTipo()){
             throw new TransferenciaNotAllowedForCarteiraTipoException();
         }
+
+        if (!pagador.isBalanceBiggerThan(transferenciaDto.valor())){
+
+        }
     }
 }
