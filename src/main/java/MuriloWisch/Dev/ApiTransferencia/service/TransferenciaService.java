@@ -5,6 +5,7 @@ import MuriloWisch.Dev.ApiTransferencia.entity.Carteira;
 import MuriloWisch.Dev.ApiTransferencia.entity.Transferencia;
 import MuriloWisch.Dev.ApiTransferencia.exception.CarteiraNotFoundException;
 import MuriloWisch.Dev.ApiTransferencia.exception.TransferenciaException;
+import MuriloWisch.Dev.ApiTransferencia.exception.TransferenciaNotAllowedForCarteiraTipoException;
 import MuriloWisch.Dev.ApiTransferencia.repository.CarteiraRepository;
 import MuriloWisch.Dev.ApiTransferencia.repository.TransferenciaRepository;
 import jakarta.validation.Valid;
@@ -33,7 +34,7 @@ public class TransferenciaService {
 
     private void validarTransferencia(TransferenciaDto transferenciaDto, Carteira pagador) {
         if (!pagador.isTransferenciaAllowedForCarteiraTipo()){
-            throw new TransferenciaNotAllowedForCarteiraTipoException()
+            throw new TransferenciaNotAllowedForCarteiraTipoException();
         }
     }
 }
