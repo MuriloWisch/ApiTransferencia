@@ -97,4 +97,8 @@ public class Carteira {
     public void setCarteiraTipo(CarteiraTipo carteiraTipo) {
         this.carteiraTipo = carteiraTipo;
     }
+
+    public boolean isTransferenciaAllowedForCarteiraTipo() {
+        return this.carteiraTipo.equals(CarteiraTipo.Enum.get())
+    }
 }

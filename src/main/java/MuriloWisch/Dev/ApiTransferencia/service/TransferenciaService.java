@@ -1,6 +1,7 @@
 package MuriloWisch.Dev.ApiTransferencia.service;
 
 import MuriloWisch.Dev.ApiTransferencia.controller.dto.TransferenciaDto;
+import MuriloWisch.Dev.ApiTransferencia.entity.Carteira;
 import MuriloWisch.Dev.ApiTransferencia.entity.Transferencia;
 import MuriloWisch.Dev.ApiTransferencia.exception.CarteiraNotFoundException;
 import MuriloWisch.Dev.ApiTransferencia.repository.CarteiraRepository;
@@ -19,10 +20,17 @@ public class TransferenciaService {
         this.carteiraRepository = carteiraRepository;
     }
 
-    public Transferencia transferencia(@Valid TransferenciaDto dto) {
-        carteiraRepository.findById(dto.remetente()).orElseThrow(() -> new CarteiraNotFoundException(dto.remetente()));
+    public Transferencia transferencia(TransferenciaDto transferenciaDto) {
+        var pagador = carteiraRepository.findById(transferenciaDto.remetente()).orElseThrow(() -> new CarteiraNotFoundException(transferenciaDto.remetente()));
+        var recebedor = carteiraRepository.findById(transferenciaDto.recebedor()).orElseThrow(() -> new CarteiraNotFoundException(transferenciaDto.recebedor()));
+
+        validarTransferencia(transferenciaDto, pagador);
 
 
         return null;
+    }
+
+    private void validarTransferencia(TransferenciaDto transferenciaDto, Carteira pagador) {
+        if (pagador.isTransferenciaAllowedForCarteiraTipo())
     }
 }
