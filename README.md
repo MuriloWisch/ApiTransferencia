@@ -104,9 +104,9 @@ POST /transferencia
 Content-Type: application/json
 
 {
-  "value": 100.0,
-  "payer": 4,
-  "payee": 15
+  "valor": 100.0,
+  "pagador": 4,
+  "recebedor": 15
 }
 ```
 
