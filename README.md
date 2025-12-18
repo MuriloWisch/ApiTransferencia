@@ -105,8 +105,8 @@ Content-Type: application/json
 
 {
   "valor": 100.0,
-  "pagador": 4,
-  "recebedor": 15
+  "remetente": 1,
+  "recebedor": 2
 }
 ```
 
