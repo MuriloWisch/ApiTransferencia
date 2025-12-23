@@ -2,7 +2,7 @@ package MuriloWisch.Dev.ApiTransferencia.controller.dto;
 
 import java.math.BigDecimal;
 
-public class AtualizarCarteiraDto {
+public class AtualizarSaldoDto {
     private BigDecimal saldo;
 
     public BigDecimal getSaldo() {

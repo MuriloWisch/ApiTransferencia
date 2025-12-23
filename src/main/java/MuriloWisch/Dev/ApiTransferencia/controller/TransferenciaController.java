@@ -23,6 +23,5 @@ public class TransferenciaController {
         var response = transferenciaService.transferencia(dto);
 
         return ResponseEntity.ok(response);
-
     }
 }

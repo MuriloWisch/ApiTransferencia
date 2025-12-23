@@ -21,7 +21,9 @@ public class CarteiraService {
         if (carteiraDb.isPresent()){
             throw new CarteiraDataAlreadyExistsException("CpfCnpj ou Email ja existe");
         }
-
         return carteiraRepository.save(dto.toCarteira());
     }
+
+
+
 }
