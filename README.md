@@ -114,6 +114,24 @@ Esse endpoint valida saldo e regras de negócio antes de concluir a operação.
 
 ---
 
+✨ Funcionalidade Adicional – Crédito de Saldo
+
+Foi implementada uma feature extra de crédito de valor em carteira, permitindo adicionar saldo a um usuário sem a necessidade de uma transferência entre contas.
+
+Essa funcionalidade foi criada com o objetivo de aprofundar o aprendizado em:
+
+Atualizações parciais de recursos (PATCH);
+
+Regras de negócio isoladas na camada de serviço;
+
+Validações de entrada;
+
+Boas práticas de design de endpoints REST.
+
+Essa adição reforça o caráter evolutivo do projeto, indo além do desafio base e explorando situações do mundo real no desenvolvimento backend.
+
+---
+
 ## 📍 Testes com Postman
 
 O projeto pode ser testado utilizando o **Postman**, permitindo validar:
