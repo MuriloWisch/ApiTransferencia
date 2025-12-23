@@ -6,6 +6,8 @@ import MuriloWisch.Dev.ApiTransferencia.exception.CarteiraDataAlreadyExistsExcep
 import MuriloWisch.Dev.ApiTransferencia.repository.CarteiraRepository;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+
 @Service
 public class CarteiraService {
 
@@ -25,5 +27,6 @@ public class CarteiraService {
     }
 
 
-
+    public void atualizarSaldo(Long id, BigDecimal novoSaldo) {
+    }
 }
