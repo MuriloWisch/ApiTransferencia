@@ -130,7 +130,21 @@ Boas práticas de design de endpoints REST.
 
 Essa adição reforça o caráter evolutivo do projeto, indo além do desafio base e explorando situações do mundo real no desenvolvimento backend.
 
----
+```
+🔗 Endpoint (Postman)
+
+PATCH /carteira/1/creditar
+Content-Type: application/json
+
+📦 Body (JSON)
+
+{
+  "saldo": 100
+}
+👉 Esse valor será somado ao saldo atual da carteira.
+
+
+```
 
 ## 📍 Testes com Postman
 
