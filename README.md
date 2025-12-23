@@ -24,7 +24,6 @@ A **TransferenciaAPI** permite:
 * Realização de transferências entre usuários;
 * Validação de saldo antes da transferência;
 * Execução das transferências de forma transacional;
-* Simulação de integrações externas para autorização ou notificação.
 
 A API segue princípios REST e foi desenvolvida visando clareza, organização e facilidade de manutenção, servindo como um projeto prático de estudos em backend.
 
