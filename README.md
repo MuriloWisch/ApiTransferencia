@@ -153,6 +153,7 @@ O projeto pode ser testado utilizando o **Postman**, permitindo validar:
 * Cadastro de usuários
 * Consulta de usuários
 * Transferências entre contas
+* Creditar valor para usuários
 
 ---
 
