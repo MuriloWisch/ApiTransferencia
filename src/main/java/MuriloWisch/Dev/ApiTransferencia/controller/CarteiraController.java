@@ -1,6 +1,6 @@
 package MuriloWisch.Dev.ApiTransferencia.controller;
 
-import MuriloWisch.Dev.ApiTransferencia.controller.dto.AtualizarSaldoDto;
+import MuriloWisch.Dev.ApiTransferencia.controller.dto.CreditarSaldoDto;
 import MuriloWisch.Dev.ApiTransferencia.controller.dto.CriarCarteiraDto;
 import MuriloWisch.Dev.ApiTransferencia.entity.Carteira;
 import MuriloWisch.Dev.ApiTransferencia.service.CarteiraService;
@@ -24,9 +24,9 @@ public class CarteiraController {
        return ResponseEntity.ok(carteira);
     }
 
-    @PatchMapping("/carteira/{id}/saldo")
-    public ResponseEntity<Carteira> atualizarSaldo(@PathVariable Long id, @RequestBody AtualizarSaldoDto dto){
-        carteiraService.atualizarSaldo(id, dto.getSaldo());
+    @PatchMapping("/carteira/{id}/creditar")
+    public ResponseEntity<Carteira> creditarSaldo(@PathVariable Long id, @RequestBody CreditarSaldoDto dto){
+        carteiraService.creditarSaldo(id, dto.getSaldo());
         return ResponseEntity.noContent().build();
     }
 

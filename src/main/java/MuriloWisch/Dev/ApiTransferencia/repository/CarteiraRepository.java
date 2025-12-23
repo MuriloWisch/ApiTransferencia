@@ -16,6 +16,10 @@ public interface CarteiraRepository extends JpaRepository<Carteira, Long> {
 
     @Modifying
     @Transactional
-    @Query("UPDATE Carteira c SET c.saldo = :saldo WHERE c.id = :id")
-    void atualizarSaldo(@Param ("id") Long id, @Param("saldo")BigDecimal saldo);
+    @Query("""
+        UPDATE Carteira c
+        SET c.saldo = c.saldo + :valor
+        WHERE c.id = :id
+    """)
+    int creditarSaldo(@Param ("id") Long id, @Param("valor")BigDecimal valor);
 }
