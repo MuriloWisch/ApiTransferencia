@@ -50,6 +50,7 @@ src/
 Dockerfile
 docker-compose.yml
 pom.xml
+
 ```
 
 * **Controller** – Definição dos endpoints REST
